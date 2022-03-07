@@ -1,0 +1,16 @@
+<h1>New Property</h1>
+
+<%= form_with model: @property do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.file_field :images, multiple: true %><br>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

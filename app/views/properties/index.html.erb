@@ -1,3 +1,13 @@
 <h1> Properties.com </h1>
 
 <h2>Find your property right here!</h2>
+
+<ul>
+  <% @properties.each do |prop| %>
+    <li>
+      <%= link_to prop.name, prop %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "New Property", new_property_path %>
