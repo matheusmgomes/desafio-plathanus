@@ -1,6 +1,59 @@
 <!doctype html>
 <html lang="en">
+  <%= render 'properties/menu' %>
   <body>
-    
+    <div class="py-5 jumbotron">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h1 class="display-4"><%= @property.name %></h1>
+            <p class="lead">
+              Location: Lorem Ipsum
+            </p>
+            <p class="lead">
+              Rental Price: $2000
+            </p>
+            <p class="lead">
+              Description:
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vehicula justo eget mauris lacinia, sed feugiat nisl laoreet. Integer semper nulla et augue consectetur, ut vehicula lorem hendrerit. Vivamus arcu.
+            </p>
+          </div>
+          <div class="col-md-auto">
+            <%= image_tag(@property.cover, class:"rounded cover-photo") %>
+          </div>
+        </div>  
+      </div>
+    </div>
+
+    <div class="py-5 container">
+      <div class="row">
+        <div class="col-4">
+          <h1 class="display-4">Map</h1>
+          <!--Google map-->
+          <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+            <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+              style="border:0" allowfullscreen></iframe>
+          </div>
+
+          <!--Google Maps-->          
+        </div>
+        <div class="col-md-auto">
+          <h1 class="display-4">More Pictures</h1>
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <% @property.images.each do |img| %>
+                  <% unless img == @property.cover %>
+                    <td>
+                      <%= image_tag(img, class:"rounded table-photo") %>
+                    </td>
+                  <% end %>
+                <% end %>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>  
+    </div>  
   </body>
 </html>

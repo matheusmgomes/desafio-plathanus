@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+  <%= render 'properties/menu' %>
   <body>
     <div class="py-5 text-center container-bg">
       <div class="row py-lg-5">
@@ -10,7 +11,7 @@
       </div>
     </div>
 
-    <div class="jumbotron container-fluid">
+    <div class="py-5 jumbotron container-fluid">
       <div class="container">
         <div class="row">
           <div class="col">
@@ -46,14 +47,14 @@
       </div>
     </div>
 
-    <div class="jumbotron container-fluid">
+    <div class="py-5 jumbotron container-fluid">
       <div class="container">
         <div class="row">
           <div class="col-md-auto">
               <%= image_tag('casa1.jpg', class:"rounded img-fluid mx-auto") %>
           </div>        
           <div class="col">
-            <h1 class="display-4">Add a property!</h1>
+            <h1 class="py-5 display-4">Add a property!</h1>
             <%= link_to("Add", new_property_path, class:"btn btn-primary") %>
           </div>
         </div>
