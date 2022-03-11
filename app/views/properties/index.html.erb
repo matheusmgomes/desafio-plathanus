@@ -1,11 +1,72 @@
-<h1> Properties.com </h1>
+<!doctype html>
+<html lang="en">
+  <body>
+    <div class="py-5 text-center container-bg">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="display-4 text-light">Properties.com</h1>
+          <p class="display-6 text-light">Find your property right here!</p>
+        </div>
+      </div>
+    </div>
 
-<h2>Find your property right here!</h2>
+    <div class="jumbotron container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h1 class="display-4">Only the best</h1>
+            <p class="lead">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan convallis odio, at malesuada quam venenatis at. Cras facilisis consectetur bibendum. Ut feugiat magna neque, interdum faucibus nulla sollicitudin a. Praesent fringilla accumsan tellus, ullamcorper viverra diam vestibulum eu. In nec finibus nisl.
+            </p>
+          </div>
+          <div class="col-md-auto">
+            <%= image_tag('casa5.jpg', class:"rounded img-fluid mx-auto") %>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<ul>
-  <% @properties.each do |prop| %>
-    <li>
-      <%= link_to prop.name, prop %>
-    </li>
-  <% end %>
-</ul>
+    <div class="album py-5 bg-light">
+      <div class="container text-center">
+        <h1 class="display-4">Selected properties</h1>
+      </div>
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <% @properties.each do |prop| %>
+            <div class="card" style="width: 18rem;">
+              <%= image_tag(prop.cover, class:"card-img-top img-fluid") %>
+              <div class="card-body">
+                <h5 class="card-title"><%= prop.name %></h5>
+                <p class="card-text">Lorem ipsum dolor sit amet. </p>
+                <%= link_to "Show", prop, class:"btn btn-primary" %>
+              </div>
+            </div>               
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="jumbotron container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-auto">
+              <%= image_tag('casa1.jpg', class:"rounded img-fluid mx-auto") %>
+          </div>        
+          <div class="col">
+            <h1 class="display-4">Add a property!</h1>
+            <%= link_to("Add", new_property_path, class:"btn btn-primary") %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="text-muted py-5">
+      <div class="container">
+        <p class="float-end mb-1">
+          <a href="#">Back to top</a>
+        </p>
+      </div>
+    </footer>
+      
+  </body>
+</html>

@@ -1,6 +1,6 @@
 class PropertiesController < ApplicationController
   def index
-    @properties = Property.all.with_attached_images
+    @properties = Property.all
   end
 
   def show

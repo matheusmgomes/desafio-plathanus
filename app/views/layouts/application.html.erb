@@ -4,14 +4,16 @@
     <title>Properties</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
+    <%= stylesheet_link_tag 'bootstrap' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'bootstrap' %>
   </head>
 
   <body>
-    <div class="container">
-      <%= yield %>
-    </div>
+    <%= render 'properties/menu' %>
+    <%= yield %>
   </body>
+
 </html>
